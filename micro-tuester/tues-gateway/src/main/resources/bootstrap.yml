@@ -1,0 +1,96 @@
+server:
+  port: 80
+spring:
+  application:
+    name: tues-gateway
+  cloud:
+    nacos:
+      server-addr: aliyun.whoiszxl.com:8848
+      config:
+        server-addr: aliyun.whoiszxl.com:8848
+        file-extension: yaml
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: tues-admin-web_router
+          uri: lb://tues-admin-web   # 转发到那个目的地
+          predicates:
+            - Path=/admin/**
+          filters:
+            - StripPrefix=1 # 当前端访问/admin/login - >login 将admin自动的去掉
+
+        - id: tues-comment-web_router #评价服务
+          uri: lb://tues-comment-web
+          predicates:
+            - Path=/comment/**
+          filters:
+            - StripPrefix=1
+
+        - id: tues-discovery-web_router #首页与发现服务
+          uri: lb://tues-discovery-web
+          predicates:
+            - Path=/discovery/**
+          filters:
+            - StripPrefix=1
+
+        - id: tues-member-web_router #会员服务
+          uri: lb://tues-member-web
+          predicates:
+            - Path=/member/**
+          filters:
+            - StripPrefix=1
+
+        - id: tues-message-web_router #消息服务
+          uri: lb://tues-message-web
+          predicates:
+            - Path=/message/**
+          filters:
+            - StripPrefix=1
+
+        - id: tues-microblog-web_router #微博服务
+          uri: lb://tues-microblog-web
+          predicates:
+            - Path=/microblog/**
+          filters:
+            - StripPrefix=1
+
+        - id: tues-oss-web_router #oss上传服务
+          uri: lb://tues-oss-web
+          predicates:
+            - Path=/oss/**
+          filters:
+            - StripPrefix=1
+
+        - id: tues-recommendation-web_router #推荐服务
+          uri: lb://tues-recommendation-web
+          predicates:
+            - Path=/recommendation/**
+          filters:
+            - StripPrefix=1
+
+        - id: tues-video-web_router #视频服务
+          uri: lb://tues-video-web
+          predicates:
+            - Path=/video/**
+          filters:
+            - StripPrefix=1
+
+#    sentinel:
+#      transport:
+#        dashboard: 159.75.31.203:8858
+#      datasource:
+#        ds1.nacos:
+#          serverAddr: aliyun.whoiszxl.com:8848
+#          dataId: gw-flow
+#          ruleType: gw_flow
+#        ds2.nacos:
+#          serverAddr: aliyun.whoiszxl.com:8848
+#          dataId: api-group
+#          ruleType: gw_api_group
+
+
+# nacos中配置
+noTokenAccessUrls: /discovery,/admin/login,/member/login,/recommendation

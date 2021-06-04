@@ -1,0 +1,28 @@
+server:
+  port: 18888
+
+spring:
+  application:
+    name: tues-authentication
+  cloud:
+    nacos:
+      server-addr: aliyun.whoiszxl.com:8848
+      discovery:
+        server-addr: aliyun.whoiszxl.com:8848
+      config:
+        server-addr: aliyun.whoiszxl.com:8848
+        file-extension: yaml
+        namespace: 2c45d84c-2242-4541-91d4-5517fa25d44d
+
+
+# nacos中的文件配置
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/tues-member?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+#    username: tuester
+#    password: tuester_password
+#
+#  jpa:
+#    database-platform: org.hibernate.dialect.MySQL5Dialect
+#    show-sql: true
