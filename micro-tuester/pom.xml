@@ -158,6 +158,8 @@
         <module>tues-admin</module>
         <module>tues-task</module>
         <module>tues-flink</module>
+        <module>tues-member/tues-member-api</module>
+        <module>tues-member/tues-member-web</module>
     </modules>
 
 

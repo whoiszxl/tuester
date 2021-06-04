@@ -1,0 +1,55 @@
+spring:
+  application:
+    name: tues-member-web
+  cloud:
+    nacos:
+      server-addr: aliyun.whoiszxl.com:8848
+      config:
+        server-addr: aliyun.whoiszxl.com:8848
+        namespace: 2c45d84c-2242-4541-91d4-5517fa25d44d
+        file-extension: yaml
+
+
+# nacos中的配置
+#server:
+#  port: 20002
+#
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://rm-bp1g8o86o5tdyze14xo.mysql.rds.aliyuncs.com/zero-admin?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+#    username: mall
+#    password: mall1020!!
+#
+#  jpa:
+#    database-platform: org.hibernate.dialect.MySQL5Dialect
+#    show-sql: true
+#  redis:
+#    host: aliyun.whoiszxl.com
+#    port: 16379
+#    password: zxl123456!!
+#  cloud:
+#    sentinel:
+#      transport:
+#        dashboard: 159.75.31.203:8858:8858
+#
+#jetcache:
+#  statIntervalMinutes: 15
+#  areaInCacheName: false
+#  local:
+#    default:
+#      type: linkedhashmap
+#      keyConvertor: fastjson
+#  remote:
+#    default:
+#      type: redis
+#      keyConvertor: fastjson
+#      valueEncoder: kryo
+#      valueDecoder: kryo
+#      poolConfig:
+#        minIdle: 5
+#        maxIdle: 20
+#        maxTotal: 50
+#      host: ${spring.redis.host}
+#      port: ${spring.redis.port}
+#      password: ${spring.redis.password}
