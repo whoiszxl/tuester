@@ -62,6 +62,10 @@ public class Member extends AbstractObject implements Serializable {
     */
     private String phone;
     /**
+     * 是否在线(0：离线 1：在线)
+     */
+    private Integer online;
+    /**
     * 状态(0：无效 1：有效)
     */
     private Integer status;

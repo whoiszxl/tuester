@@ -146,7 +146,6 @@
     <modules>
         <module>tues-oss</module>
         <module>tues-member</module>
-        <module>tues-comment</module>
         <module>tues-video</module>
         <module>tues-discovery</module>
         <module>tues-message</module>
@@ -158,6 +157,8 @@
         <module>tues-admin</module>
         <module>tues-task</module>
         <module>tues-flink</module>
+        <module>tues-search</module>
+        <module>tues-feed</module>
         <module>tues-member/tues-member-api</module>
         <module>tues-member/tues-member-web</module>
     </modules>

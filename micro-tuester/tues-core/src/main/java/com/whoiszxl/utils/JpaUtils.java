@@ -38,8 +38,8 @@ public class JpaUtils {
      * @param page
      * @return
      */
-    public static MyPage convertMyPage(Page page) {
-        MyPage myPage = new MyPage();
+    public static <T> MyPage<T> convertMyPage(Page<T> page) {
+        MyPage<T> myPage = new MyPage<T>();
         myPage.setContent(page.getContent());
         myPage.setFirst(page.isFirst());
         myPage.setNumber(page.getNumber());

@@ -23,4 +23,7 @@ public class MyPage<T> {
     @ApiModelProperty("是否为首页")
     private boolean first;
 
+    public List<T> getContent() {
+        return content;
+    }
 }

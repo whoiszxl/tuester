@@ -1,6 +1,6 @@
 package com.whoiszxl.service;
 
-import com.whoiszxl.entity.vo.MemberDetailVO;
+import com.whoiszxl.dto.MemberFeignDTO;
 
 public interface MemberService {
 
@@ -8,5 +8,5 @@ public interface MemberService {
      * 会员信息查询
      * @return
      */
-    MemberDetailVO memberInfo();
+    MemberFeignDTO memberInfo();
 }

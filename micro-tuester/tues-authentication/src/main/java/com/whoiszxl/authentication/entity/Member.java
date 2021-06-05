@@ -1,6 +1,8 @@
 package com.whoiszxl.authentication.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,6 +17,8 @@ import java.util.Date;
  * @since 2021-04-08
  */
 @Data
+@Getter
+@Setter
 @Table(name = "ums_member")
 @Entity
 public class Member implements Serializable {

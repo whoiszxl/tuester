@@ -27,10 +27,6 @@ public class MemberInfo extends AbstractObject implements Serializable {
     @Id
     private Long memberId;
     /**
-     * 头像
-     */
-    private String profilePhoto;
-    /**
     * 性别(0:未知 1:男；2:女)
     */
     private Integer gender;

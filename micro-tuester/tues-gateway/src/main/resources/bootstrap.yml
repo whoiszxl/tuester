@@ -8,6 +8,7 @@ spring:
       server-addr: aliyun.whoiszxl.com:8848
       config:
         server-addr: aliyun.whoiszxl.com:8848
+        namespace: 2c45d84c-2242-4541-91d4-5517fa25d44d
         file-extension: yaml
     gateway:
       discovery:

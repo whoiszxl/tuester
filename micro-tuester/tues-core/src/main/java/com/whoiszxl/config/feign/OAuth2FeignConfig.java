@@ -25,7 +25,7 @@ public class OAuth2FeignConfig implements RequestInterceptor {
         //在request中获取到jwt的header偷
         RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
         if (requestAttributes == null) {
-            log.info("无request对象，无法传递");
+        	log.info("无request对象，无法传递");
         }
         assert requestAttributes != null;
         HttpServletRequest request = ((ServletRequestAttributes) requestAttributes).getRequest();

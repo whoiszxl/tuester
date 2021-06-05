@@ -13,6 +13,7 @@ CREATE TABLE `ums_member`(
     `real_name` varchar(16) DEFAULT '' COMMENT '真实姓名',
     `email` varchar(50) DEFAULT '' COMMENT '邮箱',
     `phone` varchar(16) DEFAULT '' COMMENT '手机',
+    `online` tinyint(2) DEFAULT 1 COMMENT '是否在线(0：离线 1：在线)',
     `status` tinyint(2) DEFAULT 1 COMMENT '状态(0：无效 1：有效)',
     `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
@@ -42,6 +43,19 @@ CREATE TABLE `ums_member_info`(
     PRIMARY KEY (`member_id`)
 ) ENGINE = InnoDB CHARSET = utf8mb4 COMMENT '微博会员详情表';
 
+
+DROP TABLE IF EXISTS `ums_member_relation`;
+CREATE TABLE `ums_member_relation`(
+    `id` int(11) NOT NULL COMMENT '主键ID',
+    `from_member_id` int(11) NOT NULL COMMENT '性别(0:未知 1:男；2:女)',
+    `to_member_id` int(11) NOT NULL COMMENT '生日',
+    `relation` tinyint(1) NOT NULL COMMENT '关系：1 from关注to， 2 from是to的粉丝， 3 from和to互关',
+    `to_nickname` varchar(100) DEFAULT '' COMMENT 'to方昵称',
+    `to_intro` varchar(100) DEFAULT '' COMMENT 'to方简介',
+    `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+    `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB CHARSET = utf8mb4 COMMENT '微博会员关系表';
 
 
 
