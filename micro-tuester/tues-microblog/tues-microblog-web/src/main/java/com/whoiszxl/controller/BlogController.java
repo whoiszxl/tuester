@@ -29,10 +29,16 @@ public class BlogController {
 
     @ApiOperation("获取当前用户的微博列表")
     @PostMapping("/list")
-    public Result<List<MicroBlogVO>> list(@RequestBody PageParam pageParam) {
-        MyPage<MicroBlog> myPage = microBlogService.listForPage(pageParam);
-        List<MicroBlogVO> microBlogVOList = BeanCopierUtils.copyListProperties(myPage.getContent(), MicroBlogVO::new);
-        return Result.buildSuccess(microBlogVOList);
+    public Result<MyPage<MicroBlogVO>> list(@RequestBody PageParam pageParam) {
+        MyPage<MicroBlog> result = microBlogService.listForPage(pageParam);
+        List<MicroBlogVO> microBlogVOList = BeanCopierUtils.copyListProperties(result.getContent(), MicroBlogVO::new);
+        MyPage<MicroBlogVO> finalResult = new MyPage<>();
+        finalResult.setFirst(result.isFirst());
+        finalResult.setNumber(result.getNumber());
+        finalResult.setSize(result.getSize());
+        finalResult.setTotalPages(result.getTotalPages());
+        finalResult.setContent(microBlogVOList);
+        return Result.buildSuccess(finalResult);
     }
 
     @ApiOperation("新增微博")
