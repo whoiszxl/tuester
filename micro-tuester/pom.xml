@@ -161,6 +161,8 @@
         <module>tues-feed</module>
         <module>tues-member/tues-member-api</module>
         <module>tues-member/tues-member-web</module>
+        <module>tues-microblog/tues-microblog-api</module>
+        <module>tues-microblog/tues-microblog-web</module>
     </modules>
 
 

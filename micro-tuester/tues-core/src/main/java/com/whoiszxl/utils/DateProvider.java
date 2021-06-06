@@ -16,6 +16,8 @@ public interface DateProvider {
 
 	Date dateNow();
 
+	Long nowTimeStamp();
+
 
 	/**
 	 * Date 转 LocalDateTime

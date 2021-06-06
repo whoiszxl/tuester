@@ -26,6 +26,11 @@ public class DateProviderImpl implements DateProvider {
     }
 
     @Override
+    public Long nowTimeStamp() {
+        return SystemTimeUtil.millisClock().now();
+    }
+
+    @Override
     public LocalDateTime dateToLocalDateTime(Date date) {
         return LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault());
     }

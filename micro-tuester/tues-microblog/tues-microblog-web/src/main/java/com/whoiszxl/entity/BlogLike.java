@@ -31,10 +31,6 @@ public class BlogLike implements Serializable {
 	 */
 	private Long memberId;
 	/**
-	 * 状态(1：点赞 0：取消赞)
-	 */
-	private Integer status;
-	/**
 	 * 创建时间
 	 */
 	private Date createdAt;

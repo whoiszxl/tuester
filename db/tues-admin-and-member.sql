@@ -3,7 +3,7 @@
 ---------------------------------------------------
 DROP TABLE IF EXISTS `ums_member`;
 CREATE TABLE `ums_member`(
-    `id` int(11) NOT NULL COMMENT '主键ID',
+    `id` bigint(11) NOT NULL COMMENT '主键ID',
     `username` varchar(16) NOT NULL COMMENT '会员名',
     `password` varchar(100) NOT NULL COMMENT '密码',
     `avatar` varchar(200) NOT NULL COMMENT '头像',
@@ -26,7 +26,7 @@ CREATE TABLE `ums_member`(
 
 DROP TABLE IF EXISTS `ums_member_info`;
 CREATE TABLE `ums_member_info`(
-    `member_id` int(11) NOT NULL COMMENT '用户ID',
+    `member_id` bigint(11) NOT NULL COMMENT '用户ID',
     `gender` tinyint(1) DEFAULT 0 COMMENT '性别(0:未知 1:男；2:女)',
     `birthday` datetime DEFAULT NULL COMMENT '生日',
     `country_code` varchar(5) DEFAULT '' COMMENT '国家码',
@@ -35,8 +35,8 @@ CREATE TABLE `ums_member_info`(
     `city` varchar(30) DEFAULT '' COMMENT '城市',
     `district` varchar(200) DEFAULT '' COMMENT '区域',
     `grade_level` varchar(255) DEFAULT '' COMMENT '会员等级',
-    `login_count` int(11) NOT NULL DEFAULT 0 COMMENT '会员登录次数',
-    `login_error_count` int(11) NOT NULL DEFAULT 0 COMMENT '会员登录错误次数',
+    `login_count` bigint(11) NOT NULL DEFAULT 0 COMMENT '会员登录次数',
+    `login_error_count` bigint(11) NOT NULL DEFAULT 0 COMMENT '会员登录错误次数',
     `last_login` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '最后登录',
     `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
@@ -46,9 +46,9 @@ CREATE TABLE `ums_member_info`(
 
 DROP TABLE IF EXISTS `ums_member_relation`;
 CREATE TABLE `ums_member_relation`(
-    `id` int(11) NOT NULL COMMENT '主键ID',
-    `from_member_id` int(11) NOT NULL COMMENT '性别(0:未知 1:男；2:女)',
-    `to_member_id` int(11) NOT NULL COMMENT '生日',
+    `id` bigint(11) NOT NULL COMMENT '主键ID',
+    `from_member_id` bigint(11) NOT NULL COMMENT '性别(0:未知 1:男；2:女)',
+    `to_member_id` bigint(11) NOT NULL COMMENT '生日',
     `relation` tinyint(1) NOT NULL COMMENT '关系：1 from关注to， 2 from是to的粉丝， 3 from和to互关',
     `to_nickname` varchar(100) DEFAULT '' COMMENT 'to方昵称',
     `to_intro` varchar(100) DEFAULT '' COMMENT 'to方简介',
@@ -71,7 +71,7 @@ CREATE TABLE `sys_menu`(
   `name` varchar(64) NOT NULL COMMENT '名称',
   `desc` varchar(256) DEFAULT NULL COMMENT '描述',
   `target_url` varchar(128) DEFAULT NULL COMMENT '目标地址',
-  `sort` int(11) NULL DEFAULT NULL COMMENT '排序索引',
+  `sort` bigint(11) NULL DEFAULT NULL COMMENT '排序索引',
   `status` tinyint(4) NOT NULL DEFAULT 1 COMMENT '状态 0-无效； 1-有效；',
   `created_by` bigint(18) NULL DEFAULT NULL COMMENT '创建人',
   `updated_by` bigint(18) NULL DEFAULT NULL COMMENT '更新人',

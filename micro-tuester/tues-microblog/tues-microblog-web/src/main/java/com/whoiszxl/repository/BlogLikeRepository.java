@@ -5,5 +5,4 @@ import com.whoiszxl.entity.BlogLike;
 
 public interface BlogLikeRepository extends BaseRepository<BlogLike> {
 
-
 }

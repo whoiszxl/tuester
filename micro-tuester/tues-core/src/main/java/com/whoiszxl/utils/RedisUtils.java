@@ -285,7 +285,7 @@ public class RedisUtils {
      * @param key
      * @return
      */
-    public Map<Object, Object> hGetAll(String key) {
+    public Map<String, String> hGetAll(String key) {
         return redisTemplate.opsForHash().entries(key);
     }
 
@@ -302,6 +302,10 @@ public class RedisUtils {
 
     public void hPut(String key, String hashKey, String value) {
         redisTemplate.opsForHash().put(key, hashKey, value);
+    }
+
+    public void hDelete(String key, String... hashKey) {
+        redisTemplate.opsForHash().delete(key, hashKey);
     }
 
     public void hPutAll(String key, Map<String, String> maps) {
@@ -505,6 +509,15 @@ public class RedisUtils {
      */
     public Boolean sIsMember(String key, Object value) {
         return redisTemplate.opsForSet().isMember(key, value);
+    }
+    
+    /**
+     * 获取set中的所有成员
+     * @param key
+     * @return
+     */
+    public Set<String> sMembers(String key) {
+        return redisTemplate.opsForSet().members(key);
     }
 
     /**

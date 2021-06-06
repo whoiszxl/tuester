@@ -57,7 +57,7 @@ public class BlogComment implements Serializable {
 	/**
 	 * 点赞数
 	 */
-	private Integer like;
+	private Integer likeCount;
 	/**
 	 * 评论父ID，为0则是主评论
 	 */
